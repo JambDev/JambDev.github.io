@@ -1,2 +1,2 @@
 # JambDev.github.io
-epic
+cool

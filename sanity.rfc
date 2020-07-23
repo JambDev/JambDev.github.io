@@ -1,0 +1,17 @@
+RFC_VERSION = 1.0
+
+NOSPY_PLAYER {
+  LEVEL = 3
+  LOCK = FALSE
+  HEARTBEAT = TRUE
+  NO_INJECT = FALSE
+  
+  ON TAMPER event {
+    self->tamperIndex += 1;
+    if self->tamperIndex > 5 {
+      self->CORE->kill();
+      exit;
+    }
+    event.restore_and_stop();
+  }
+}
